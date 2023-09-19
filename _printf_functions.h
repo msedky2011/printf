@@ -1,3 +1,6 @@
+#ifndef PF_FUN_H
+#define PF_FUN_H
+
 #include <unistd.h>
 #include <stdarg.h>
 #include "_putchar.h"
@@ -26,3 +29,5 @@ int printf_string(va_list val);
  */
 int printf_37(void);
 
+
+#endif

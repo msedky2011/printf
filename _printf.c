@@ -1,70 +1,49 @@
-#include <unistd.h>
-#include <stdarg.h>
 #include "_printf.h"
 
+/**
+ * _printf - is a function that selects the correct function to print.
+ * @format: identifier to look for.
+ * Return: the length of the string.
+ */
 int _printf(const char * const format, ...)
 {
-	
 	conversion_map map[] = {
-		{"%s", printf_string},
-		{"%c", printf_char},
+		{"%s", printf_string}, {"%c", printf_char},
 		{"%%", printf_37}
 	};
 
-
 	va_list args;
+	int i = 0, j = 0, count = 0, max = 3, broken = 0;
 
-	int i = 0 , j = 0 , count = 0, MAX_MAP = 3, broken = 0;
-
-	
-	va_start (args, format);
+	va_start(args, format);
 
 	if (format == NULL || format[0] == '\0')
 	{
 		return (-1);
 	}
-
-
 	while (format[i] != '\0')
 	{
-		
 		j = 0;
 		broken = 0;
-		while (j < MAX_MAP)
+		while (j < max)
 		{
-		
-			if(format[i] == map[j].id[0] && format[i+1] == map[j].id[1])
+
+			if (format[i] == map[j].id[0] && format[i + 1] == map[j].id[1])
 			{
 				count += map[j].f(args);
 				i += 2;
 				broken = 1;
 				break;
-
-
 			}
-			
-			j++;		
+			j++;
 		}
-
 		if (!broken)
 		{
-
 			_putchar(format[i]);
 			count++;
 			i++;
-		
 		}
 	}
-
 	va_end(args);
-
-
-
 	return (i);
-
-
-
-
-
-
 }

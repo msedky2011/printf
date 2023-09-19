@@ -7,11 +7,11 @@
  */
 int printf_char(va_list val)
 {
-        char s;
+	char s;
 
-        s = va_arg(val, int);
-        _putchar(s);
-        return (1);
+	s = va_arg(val, int);
+	_putchar(s);
+	return (1);
 }
 
 
@@ -23,25 +23,25 @@ int printf_char(va_list val)
 
 int printf_string(va_list val)
 {
-        char *s;
-        int i, len;
+	char *s;
+	int i, len;
 
-        s = va_arg(val, char *);
-        if (s == NULL)
-        {
-                s = "(null)";
-                len = strlen(s);
-                for (i = 0; i < len; i++)
-                        _putchar(s[i]);
-                return (len);
-        }
-        else
-        {
-                len = strlen(s);
-                for (i = 0; i < len; i++)
-                        _putchar(s[i]);
-                return (len);
-        }
+	s = va_arg(val, char *);
+	if (s == NULL)
+	{
+		s = "(null)";
+		len = strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
+	else
+	{
+		len = strlen(s);
+		for (i = 0; i < len; i++)
+			_putchar(s[i]);
+		return (len);
+	}
 }
 
 
@@ -51,6 +51,6 @@ int printf_string(va_list val)
  */
 int printf_37(void)
 {
-        _putchar(37);
-        return (1);
+	_putchar(37);
+	return (1);
 }
