@@ -1,5 +1,5 @@
 #include "_printf.h"
-
+#include <stdio.h>
 /**
  * _printf - is a function that selects the correct function to print.
  * @format: identifier to look for.
@@ -27,9 +27,9 @@ int _printf(const char * const format, ...)
 		broken = 0;
 		while (j < max)
 		{
-
 			if (format[i] == map[j].id[0] && format[i + 1] == map[j].id[1])
 			{
+
 				count += map[j].f(args);
 				i += 2;
 				broken = 1;
@@ -45,5 +45,5 @@ int _printf(const char * const format, ...)
 		}
 	}
 	va_end(args);
-	return (i);
+	return (count);
 }
