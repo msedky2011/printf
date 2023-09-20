@@ -14,7 +14,7 @@ int _printf(const char * const format, ...)
 	};
 
 	va_list args;
-	int i = 0, j = 0, count = 0, max = 3, broken = 0;
+	int i = 0, j = 0, count = 0, max = 5, broken = 0;
 
 	va_start(args, format);
 
