@@ -1,4 +1,5 @@
 #include "_printf.h"
+#include "main.h"
 #include <stdio.h>
 /**
  * _printf - is a function that selects the correct function to print.
@@ -9,7 +10,7 @@ int _printf(const char * const format, ...)
 {
 	conversion_map map[] = {
 		{"%s", printf_string}, {"%c", printf_char},
-		{"%%", printf_37}
+		{"%%", printf_37}, {"%i", printf_int}, {"%d", printf_dec}
 	};
 
 	va_list args;
